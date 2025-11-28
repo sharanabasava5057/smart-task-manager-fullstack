@@ -1,0 +1,56 @@
+<h2>Reports</h2>
+
+<p *ngIf="!authService.isAdmin() && !authService.isManager()">
+  You do not have permission to access reports.
+</p>
+
+<div *ngIf="authService.isAdmin() || authService.isManager()">
+
+  <!-- By Status -->
+  <div class="card report-card">
+    <h3>Task Report by Status</h3>
+
+    <label>Status:</label>
+    <select [(ngModel)]="status">
+      <option value="TODO">TODO</option>
+      <option value="IN_PROGRESS">IN_PROGRESS</option>
+      <option value="COMPLETED">COMPLETED</option>
+      <option value="BLOCKED">BLOCKED</option>
+    </select>
+
+    <div class="btn-row">
+      <button class="button-primary" (click)="downloadStatusPdf()" [disabled]="downloading">
+        PDF
+      </button>
+      <button class="button-primary" (click)="downloadStatusExcel()" [disabled]="downloading">
+        Excel
+      </button>
+    </div>
+  </div>
+
+  <!-- By Date Range -->
+  <div class="card report-card">
+    <h3>Task Report by Date Range</h3>
+
+    <div class="form-field">
+      <label>Start Date:</label>
+      <input type="date" [(ngModel)]="startDate" />
+    </div>
+
+    <div class="form-field">
+      <label>End Date:</label>
+      <input type="date" [(ngModel)]="endDate" />
+    </div>
+
+    <div class="btn-row">
+      <button class="button-primary" (click)="downloadRangePdf()" [disabled]="downloading">
+        PDF
+      </button>
+      <button class="button-primary" (click)="downloadRangeExcel()" [disabled]="downloading">
+        Excel
+      </button>
+    </div>
+  </div>
+
+  <p *ngIf="downloading">Generating report...</p>
+</div>

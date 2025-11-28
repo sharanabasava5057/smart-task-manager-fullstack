@@ -1,0 +1,26 @@
+<h2>Manage Users</h2>
+
+<button routerLink="/admin/add-user" class="button-primary">Add New User</button>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Roles</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let u of users">
+      <td>{{ u.fullName }}</td>
+      <td>{{ u.email }}</td>
+      <td>{{ u.roles.join(', ') }}</td>
+      <td>
+        <button (click)="editRole(u.id)">Edit Role</button>
+        <button (click)="deleteUser(u.id)" class="delete-btn">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

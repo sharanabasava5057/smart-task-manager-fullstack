@@ -1,0 +1,19 @@
+<h2>Activity Logs</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Action</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let log of logs">
+      <td>{{ log.adminEmail }}</td>
+      <td>{{ log.action }}</td>
+      <td>{{ log.createdAt }}</td>
+    </tr>
+  </tbody>
+</table>

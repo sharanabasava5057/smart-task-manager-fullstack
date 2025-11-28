@@ -1,0 +1,12 @@
+<h2>Edit Role</h2>
+
+<div class="card">
+  <label>New Role</label>
+  <select [(ngModel)]="role">
+    <option value="ADMIN">ADMIN</option>
+    <option value="MANAGER">MANAGER</option>
+    <option value="EMPLOYEE">EMPLOYEE</option>
+  </select>
+
+  <button (click)="save()" class="button-primary">Save</button>
+</div>

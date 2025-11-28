@@ -1,0 +1,52 @@
+<div class="card">
+  <h1>Create account</h1>
+  <p class="subtitle">Join Smart Task Manager.</p>
+
+  <form (ngSubmit)="submit()" [formGroup]="form" novalidate>
+    <div class="form-field">
+      <label for="fullName">Full name</label>
+      <input id="fullName" type="text" formControlName="fullName" />
+      <div class="error" *ngIf="form.get('fullName')?.invalid && form.get('fullName')?.touched">
+        Please enter your name.
+      </div>
+    </div>
+
+    <div class="form-field">
+      <label for="email">Email</label>
+      <input id="email" type="email" formControlName="email" />
+      <div class="error" *ngIf="form.get('email')?.invalid && form.get('email')?.touched">
+        Please enter a valid email.
+      </div>
+    </div>
+
+    <div class="form-field">
+      <label for="password">Password</label>
+      <input id="password" type="password" formControlName="password" />
+      <div class="error" *ngIf="form.get('password')?.invalid && form.get('password')?.touched">
+        Min 4 characters.
+      </div>
+    </div>
+
+    <!-- FIXED BUTTON -->
+    <button
+      class="button button-primary"
+      type="submit"
+      (click)="submit()"
+      [disabled]="loading"
+    >
+      {{ loading ? 'Creating account...' : 'Sign up' }}
+    </button>
+  </form>
+
+  <p style="margin-top: 1rem; font-size: 0.85rem; text-align: center;">
+    Already have an account?
+    <a routerLink="/login" class="link">Sign in</a>
+  </p>
+
+  <div *ngIf="error" class="error" style="margin-top: 0.75rem; text-align: center;">
+    {{ error }}
+  </div>
+  <div *ngIf="success" style="margin-top: 0.75rem; text-align: center; color: #15803d; font-size: 0.85rem;">
+    {{ success }}
+  </div>
+</div>

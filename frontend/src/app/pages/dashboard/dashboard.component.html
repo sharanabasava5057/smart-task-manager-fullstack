@@ -1,0 +1,49 @@
+<h2>Dashboard</h2>
+
+<div class="grid-2">
+
+  <div class="card">
+    <h3>Task Distribution (Status)</h3>
+    <canvas id="statusChart"></canvas>
+  </div>
+
+  <div class="card">
+    <h3>Completed Tasks by Employee</h3>
+    <canvas id="employeeChart"></canvas>
+  </div>
+
+</div>
+
+
+<div class="grid-2" style="margin-top: 2rem;">
+
+  <div class="card">
+    <h3>Overdue Tasks</h3>
+
+    <ul *ngIf="overdueTasks.length; else noOverdue">
+      <li *ngFor="let t of overdueTasks">
+        <strong>{{ t.title }}</strong> — due {{ t.dueDate }}
+      </li>
+    </ul>
+
+    <ng-template #noOverdue>
+      <p>No overdue tasks 🎉</p>
+    </ng-template>
+  </div>
+
+
+  <div class="card">
+    <h3>Upcoming Tasks (Next 7 Days)</h3>
+
+    <ul *ngIf="upcomingTasks.length; else noUpcoming">
+      <li *ngFor="let t of upcomingTasks">
+        <strong>{{ t.title }}</strong> — due {{ t.dueDate }}
+      </li>
+    </ul>
+
+    <ng-template #noUpcoming>
+      <p>No upcoming deadlines.</p>
+    </ng-template>
+  </div>
+
+</div>

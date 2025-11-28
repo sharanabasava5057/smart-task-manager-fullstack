@@ -1,0 +1,21 @@
+<h2>Add New User</h2>
+
+<div class="card">
+  <label>Full Name</label>
+  <input [(ngModel)]="fullName">
+
+  <label>Email</label>
+  <input [(ngModel)]="email">
+
+  <label>Password</label>
+  <input type="password" [(ngModel)]="password">
+
+  <label>Role</label>
+  <select [(ngModel)]="role">
+    <option value="ADMIN">ADMIN</option>
+    <option value="MANAGER">MANAGER</option>
+    <option value="EMPLOYEE">EMPLOYEE</option>
+  </select>
+
+  <button (click)="save()" class="button-primary">Save</button>
+</div>

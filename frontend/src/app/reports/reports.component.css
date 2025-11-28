@@ -1,0 +1,14 @@
+.report-card {
+  max-width: 480px;
+  margin-bottom: 1.5rem;
+}
+
+.report-card h3 {
+  margin-top: 0;
+}
+
+.btn-row {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}

@@ -1,0 +1,227 @@
+/* ===============================
+   GLOBAL UI BASE STYLES
+================================*/
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f5f6fa;
+  color: #333;
+}
+
+h1, h2, h3 {
+  margin: 0 0 1rem 0;
+  font-weight: 600;
+}
+
+/* Cards */
+.card {
+  background: white;
+  padding: 1.2rem 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  margin-bottom: 1.5rem;
+}
+
+/* Grid Layouts */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 1rem;
+}
+
+/* Button Base */
+button {
+  cursor: pointer;
+  border: none;
+}
+
+/* ===============================
+   TASK MANAGEMENT UI
+================================*/
+
+/* Grid Layout */
+.tasks-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+}
+
+/* Task Cards */
+.task-card {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.task-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.desc {
+  font-size: 0.85rem;
+  color: #555;
+}
+
+/* Create Box */
+.create-box {
+  max-width: 520px;
+  margin-bottom: 1.5rem;
+}
+
+.form-field {
+  margin-bottom: 0.8rem;
+}
+
+input, select {
+  width: 100%;
+  padding: 0.6rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 0.9rem;
+}
+
+/* Buttons */
+.button-primary {
+  background: #2563eb;
+  color: white;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  border: none;
+  font-size: 0.9rem;
+}
+
+.delete-btn {
+  background: #ef4444;
+  color: white;
+  padding: 0.3rem 0.6rem;
+  font-size: 0.75rem;
+  border-radius: 4px;
+}
+
+/* Priority Badges */
+.badge {
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+  color: white;
+  font-size: 0.75rem;
+}
+
+.badge.high {
+  background: #ef4444;
+}
+
+.badge.medium {
+  background: #f59e0b;
+}
+
+.badge.low {
+  background: #10b981;
+}
+
+/* Status Badge */
+.status-badge {
+  background: #3b82f6;
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+  color: white;
+  font-size: 0.75rem;
+}
+
+/* ===============================
+   DASHBOARD ANALYTICS UI
+================================*/
+
+.chart-container {
+  width: 100%;
+  height: 320px;
+}
+
+.dashboard-section-title {
+  margin-top: 0.5rem;
+  margin-bottom: 0.8rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+/* List Styles */
+.list-item {
+  padding: 0.6rem 0.3rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.list-item:last-child {
+  border-bottom: none;
+}
+
+.badge-danger {
+  background: #ef4444;
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
+  color: white;
+  font-size: 0.75rem;
+}
+
+.badge-warning {
+  background: #f59e0b;
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
+  color: white;
+  font-size: 0.75rem;
+}
+
+/* ===============================
+   ADMIN PANEL UI
+================================*/
+
+.admin-menu {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.admin-menu button {
+  padding: 0.5rem 1rem;
+  background: #2563eb;
+  color: white;
+  border-radius: 6px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.table th,
+.table td {
+  padding: 0.8rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.table th {
+  background: #f3f4f6;
+  font-weight: bold;
+}
+
+/* ===============================
+   FORMS (Global)
+================================*/
+
+.form-card {
+  max-width: 450px;
+  margin: auto;
+}
+
+.form-card input {
+  margin-bottom: 1rem;
+}
